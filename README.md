@@ -1,5 +1,24 @@
-# JSPM Project Template 
-This repo contains the basic framework for a project that contains jspm, D3 and bootstrap css.
+# Tooltip Module 
+This repo contains the spendiferous tool tip module. This repo hass a Bootstrap 3 tooltip and a purely d3 v4 tooltip.
+
+## Botstrap Tooltip
+
+
+
+```javascript
+<!-- HTML to write -->
+<a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
+
+<!-- Generated markup by the plugin -->
+<div class="tooltip top" role="tooltip">
+  <div class="tooltip-arrow"></div>
+  <div class="tooltip-inner">
+    Some tooltip text!
+  </div>
+</div>
+```
+
+
 
 ## Install
 First, run

@@ -21,6 +21,10 @@ System.config({
     "d3": "npm:d3@4.4.0",
     "font-awesome": "npm:font-awesome@4.6.3",
     "jquery": "npm:jquery@3.1.1",
+
+    "tooltips": "scripts/utils/tooltips.js",
+    "startup": "scripts/startup.js",
+
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
