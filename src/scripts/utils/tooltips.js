@@ -6,23 +6,34 @@ export function toolTips() {
 
     $(document).ready(function () {
 
-        $("body").tooltip({ selector: '[title]' });
 
-        $("[title]").tooltip({
+// Part #1 Uses a hidden tooltip with id svg-tooltip to place tooltip on mouse pointer on mouse move and leave events for selections
+        $('[data-toggle="tooltip"]').tooltip({
             container: 'body',
-            placement: 'top',
+            placement: 'auto',
             title: 'No Value',
-            trigger: 'click'
         });
-        //alter the tooltip position when shown
-        $('[title]').click(function () {
-            //var offset = this.offset();
-            $('.tooltip').css('top', parseInt($('.tooltip').css('top')) + $('body').scrollTop() + 'px')
-        });
+
+
+
+
+        // Part #2 Uses a hidden tooltip with id svg-tooltip to place tooltip on mouse pointer on mouse move and leave events for selections
+        $("circle, rect, path").on('mousemove', function (e) {
+            $("#svg-tooltip").css({ top: e.pageY + $('body').scrollTop(), left: e.pageX }); //top is event y position plus the scroll postion of body
+            $('#svg-tooltip').prop('title', $(this).attr('title')); //Sets the tilte attribute of the 
+            $('#svg-tooltip').tooltip('show')
+        })
+
+        $("circle, rect, path").on('mouseleave', function (e) {
+            $('#svg-tooltip').tooltip('destroy')
+            $('#svg-tooltip').prop('title', 'Test');
+
+        })
 
         console.log("Poop train");
         window.d3 = d3;
-    });
 
+
+    });
 
 }

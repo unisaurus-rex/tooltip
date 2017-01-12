@@ -8,7 +8,7 @@ import {toolTips} from 'tooltips';
 
 
 //The global variables
-var justTheTip = toolTips();
+var tipActivate = toolTips();
 
 //Fakey-fake data 
 var data = [
@@ -36,4 +36,4 @@ exsvg.selectAll("circle").data(data, function(d) { return d.name;})
 .attr("title",function(d) {return d.name + " X val:" + d.x + " Y val:" +d.y;}) //this is important to use data (from name key) to assign the title for the circles, this is how tooltips will work with svgs
 .attr("class","my_circle");
 
-justTheTip;
+tipActivate;
