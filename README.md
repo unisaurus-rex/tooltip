@@ -25,12 +25,19 @@ The custom SVG tooltip works in 2 parts and basically adds an event to the mouse
 ```javascript
  .attr("title",function(d) {return d.value}) 
 ```
-**Step 2:** Add the code below to the the body of your HTML page. Make sure it isn't nested in anything, it's probably easiest to just throw it at the bottom:
+**Step 2:** Add the code below to the the body of your HTML page and CSS file. Make sure it isn't nested in anything, it's probably easiest to just throw it at the bottom:
 ```javascript
 <!--This is the hidden mouse pointer tooltip-->
 <i id="svg-tooltip" data-toggle="tooltip" data-placement="auto" title="Tooltip for svg elements" data-animation="false" data-trigger="manual"/>
 ```
-**Step 3:** Add the code to your main JS file to import the module ES6 style:
+The CSS, you may need to add more glitter, but it's best to edit the default Bootstrap tooltip style for the basics:
+```css
+#svg-tooltip {
+  position: absolute;
+}
+```
+
+**Step 3:** Add the code below to your main JS file to import this magical module ES6 style:
 ```javascript
 import {toolTips} from 'tooltips';
 ```
